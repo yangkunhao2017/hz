@@ -1,0 +1,10 @@
+# 配置 feignclient 的全类名路径， 避免包名不规范无法扫描问题
+com.yhwl.hz.common.feign.HzFeignAutoConfiguration=\
+  com.yhwl.hz.admin.api.feign.RemoteDataScopeService,\
+  com.yhwl.hz.admin.api.feign.RemoteClientDetailsService,\
+  com.yhwl.hz.admin.api.feign.RemoteLogService,\
+  com.yhwl.hz.admin.api.feign.RemoteParamService,\
+  com.yhwl.hz.admin.api.feign.RemoteTenantService,\
+  com.yhwl.hz.admin.api.feign.RemoteTokenService,\
+  com.yhwl.hz.admin.api.feign.RemoteUserService,\
+  com.yhwl.hz.admin.api.feign.RemoteDictService

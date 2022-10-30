@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.yhwl.hz.common.seata.config.SeataAutoConfiguration
+
+
+

@@ -1,0 +1,148 @@
+# 使用说明 V4.4.0
+# 1. 使用docker-compose  宿主机不需要配置host来发现
+# 2. 无需修改源码，根目录  docker-compose up 即可
+# 3. 静静等待服务启动
+
+version: '3'
+services:
+  hz-mysql:
+    build:
+      context: ./db
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    container_name: hz-mysql
+    image: hz-mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./hz-mysql:/var/lib/mysql
+    command: --lower_case_table_names=1
+
+  hz-redis:
+    container_name: hz-redis
+    image: redis:6.2.6
+    restart: always
+    ports:
+      - 6379:6379
+
+  hz-register:
+    build:
+      context: ./hz-register
+    restart: always
+    container_name: hz-register
+    image: hz-register
+    ports:
+      - 8848:8848
+
+  hz-gateway:
+    build:
+      context: ./hz-gateway
+    restart: always
+    container_name: hz-gateway
+    image: hz-gateway
+    ports:
+      - 9999:9999
+
+  hz-auth:
+    build:
+      context: ./hz-auth
+    restart: always
+    container_name: hz-auth
+    image: hz-auth
+
+  hz-upms:
+    build:
+      context: ./hz-upms/hz-upms-biz
+    restart: always
+    container_name: hz-upms
+    image: hz-upms
+
+  hz-monitor:
+    build:
+      context: ./hz-visual/hz-monitor
+    restart: always
+    image: hz-monitor
+    container_name: hz-monitor
+    ports:
+      - 5001:5001
+
+  hz-daemon-quartz:
+    build:
+      context: ./hz-visual/hz-daemon-quartz
+    restart: always
+    image: hz-daemon-quartz
+    container_name: hz-daemon-quartz
+
+  hz-daemon-elastic-job:
+    build:
+      context: ./hz-visual/hz-daemon-elastic-job
+    restart: always
+    image: hz-daemon-elastic-job
+    container_name: hz-daemon-elastic-job
+
+  hz-codegen:
+    build:
+      context: ./hz-visual/hz-codegen
+    restart: always
+    image: hz-codegen
+    container_name: hz-codegen
+
+  hz-mp-platform:
+    build:
+      context: ./hz-visual/hz-mp-platform
+    restart: always
+    image: hz-mp-platform
+    container_name: hz-mp-platform
+
+  hz-pay-platform:
+    build:
+      context: ./hz-visual/hz-pay-platform
+    restart: always
+    image: hz-pay-platform
+    container_name: hz-pay-platform
+
+  hz-oa-platform:
+    build:
+      context: ./hz-visual/hz-oa-platform
+    restart: always
+    image: hz-oa-platform
+    container_name: hz-oa-platform
+
+  hz-report-platform:
+    build:
+      context: ./hz-visual/hz-report-platform
+    restart: always
+    image: hz-report-platform
+    container_name: hz-report-platform
+    ports:
+      - 9095:9095
+
+  hz-jimu-platform:
+    build:
+      context: ./hz-visual/hz-jimu-platform
+    restart: always
+    image: hz-jimu-platform
+    container_name: hz-jimu-platform
+    ports:
+      - 5008:5008
+
+  hzx-job:
+    build:
+      context: ./hz-visual/hz-xxl-job-admin
+    restart: always
+    container_name: hz-job
+    hostname: hz-job
+    image: hz-job
+    ports:
+      - 9080:9080
+
+  hz-sentinel:
+    build:
+      context: ./hz-visual/hz-sentinel-dashboard
+    restart: always
+    image: hz-sentinel
+    container_name: hz-sentinel
+    ports:
+      - 5020:5020

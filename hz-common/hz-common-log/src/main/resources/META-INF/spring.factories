@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.yhwl.hz.common.log.LogAutoConfiguration
+org.springframework.boot.env.EnvironmentPostProcessor=\
+    com.yhwl.hz.common.log.init.ApplicationLoggerInitializer

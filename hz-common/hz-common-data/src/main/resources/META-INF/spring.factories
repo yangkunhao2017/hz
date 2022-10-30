@@ -1,0 +1,10 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.yhwl.hz.common.data.cache.RedisTemplateConfiguration,\
+    com.yhwl.hz.common.data.cache.RedisMessageConfiguration,\
+    com.yhwl.hz.common.data.cache.RedisCacheManagerConfiguration,\
+    com.yhwl.hz.common.data.cache.RedisCacheAutoConfiguration,\
+    com.yhwl.hz.common.data.tenant.HzTenantConfigProperties,\
+    com.yhwl.hz.common.data.tenant.TenantContextHolderFilter,\
+    com.yhwl.hz.common.data.tenant.HzTenantConfiguration,\
+    com.yhwl.hz.common.data.mybatis.MybatisPlusConfiguration,\
+    com.yhwl.hz.common.data.resolver.TenantKeyStrResolver

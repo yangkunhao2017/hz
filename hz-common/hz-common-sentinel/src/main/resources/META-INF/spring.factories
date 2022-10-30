@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.yhwl.hz.common.sentinel.SentinelAutoConfiguration,\
+    com.yhwl.hz.common.sentinel.handle.GlobalBizExceptionHandler

@@ -1,0 +1,13 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.yhwl.hz.common.security.component.HzTokenEnhancer,\
+  com.yhwl.hz.common.security.component.HzSecurityInnerAspect,\
+  com.yhwl.hz.common.security.service.HzDefaultUserDetailsServiceImpl,\
+  com.yhwl.hz.common.security.service.HzAppUserDetailsServiceImpl,\
+  com.yhwl.hz.common.security.service.HzClientDetailsServiceImpl,\
+  com.yhwl.hz.common.security.component.HzSecurityCommonAutoConfiguration,\
+  com.yhwl.hz.common.security.component.HzSecurityMessageSourceConfiguration,\
+  com.yhwl.hz.common.security.component.HzTokenStoreCleanSchedule,\
+  com.yhwl.hz.common.security.listener.AuthenticationFailureEventListener,\
+  com.yhwl.hz.common.security.listener.AuthenticationSuccessEventListener,\
+  com.yhwl.hz.common.security.listener.AuthenticationLogoutSuccessEventListener
+
